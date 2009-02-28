@@ -40,7 +40,7 @@ class Twitter {
 	/* Twitter class constructor */
 	function Twitter($username, $password, $source=false) {
 		$this->credentials = sprintf("%s:%s", $username, $password);
-		$this->application_source = $source;
+		$this->application_source = urlencode($source);
 	}
 	
 	function getPublicTimeline($format, $since_id = 0) {
